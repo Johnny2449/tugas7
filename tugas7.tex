@@ -12,27 +12,22 @@
 \usepackage {multirow}
 \usepackage{float}
 \renewcommand{\figurename}{Gambar}
-\renewcommand{\tablename}{Tabel}
+
 \renewcommand{\IEEEkeywordsname}{Keywords}
-\usepackage{caption}
 \usepackage{pgf}
-\restylefloat{table}
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+
+\graphicspath{{./Gambar/}}
+
 \begin{document}
 
-\title{Tugas 7
+\title{MLIDS: A Machine Learning Approach for Intrusion Detection for Real Time Network Dataset}
 
-MLIDS: A Machine Learning Approach for Intrusion Detection for Real Time Network Dataset\\
-{\footnotesize \textsuperscript{}}
-\thanks{Identify applicable funding agency here. If none, delete this.}
-}
-\author{\IEEEauthorblockN{\textsuperscript{} Johnny}
-\IEEEauthorblockA{\textit{Institut Teknologi Batam} \\
-\textit{Teknologi Informasi}\\
-Batam, Indonesia \\
+\author{\IEEEauthorblockN{Johnny}
+\IEEEauthorblockA{\textit{Faculty of Information Technology}\\
+\textit{Institut Teknologi Batam}\\
+Batam, Indonesia\\
 1822004@student.iteba.ac.id}
-\and
 }
 
 \maketitle
@@ -87,7 +82,7 @@ Kumpulan data NSL KDD CUP 1999 digunakan untuk eksperimen (kumpulan data KDD, 19
 
 \begin{figure}
 \centering
-\includegraphics[width=.3\textwidth]{Gambar/pct1.png}
+\scalebox{0.65}{\input{Gambar/system_architecture.pdf_tex}}
 \caption{System architecture}
 \end{figure}
 
@@ -99,44 +94,45 @@ Setelah implementasi sistem berhasil, kami menghitung matriks kebingungan untuk 
 2 menunjukkan kinerja klasifikasi pengumpulan data oleh KDDCUP menggunakan pendekatan berbasis kepadatan dari program algoritma pembelajaran mesin Gambar 3 digunakan untuk mengklasifikasikan dan memprediksi presisi sistem menggunakan
 metode yang berbeda seperti algoritma RNN.
 
-\subsection{TABEL 1 (CONFUSION MATRIX CALCULATION USING SVM FOR CLASSIFICATION)}
-
-\begin{table}[H]
+\begin{table}[hptb]
+    \centering
+    \caption{CONFUSION MATRIX CALCULATION USING SVM FOR CLASSIFICATION}
 \begin{tabular}{|c|c|c|c|}
 \hline
-no & class & normal & Attack\\
+No & class & normal & Attack\\
 \hline
 1   & normal & 1760 & 19\\
 \hline
 2   & attack & 9 & 1640\\
 \hline
-3   &  & 1769 & 1659 \\
-\hline
+\multicolumn{1}{c}{}  &  & 1769 & 1659 \\
+\cline{3-4}
 \end{tabular}
 \end{table}
 
-\subsection{TABLE II (CONFUSION MATRIX CALCULATION USING NB FOR CLASSIFICATION)}
 
-\begin{table}[H]
-\begin{tabular}{|c|c|c|c|}
-\hline
-no & class & normal & Attack\\
-\hline
-1   & normal & 1830 & 227\\
-\hline
-2   & attack & 169 & 1202\\
-\hline
-3   &  & 1999 & 1429 \\
-\hline
-\end{tabular}
+\begin{table}[hptb]
+    \centering
+    \caption{CONFUSION MATRIX CALCULATION USING NB FOR CLASSIFICATION}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    No & class & normal & Attack\\
+    \hline
+    1   & normal & 1830 & 227\\
+    \hline
+    2   & attack & 169 & 1202\\
+    \hline
+    \multicolumn{1}{c}{} &  & 1999 & 1429 \\
+    \cline{3-4}
+    \end{tabular}
 \end{table}
 
-\subsection{TABLE III (PERFORMANCE EVALUATION WITH NB AND SVM)}
-
-\begin{table}[H]
+\begin{table}[hptb]
+    \centering
+    \caption{PERFORMANCE EVALUATION WITH NB AND SVM}
 \begin{tabular}{|c|c|c|c|}
 \hline
-no &  & NB & SVM\\
+No & parameter & NB & SVM\\
 \hline
 1   & Accuracy & 0.9892 & 0.9525\\
 \hline
@@ -174,5 +170,5 @@ Studi ini mengusulkan pendekatan SVM-IDS berdasarkan pembelajaran mendalam untuk
 
 \bibliographystyle{IEEEtran}
 \bibliography{pustaka.bib}
-\vspace{12pt}
+
 \end{document}
